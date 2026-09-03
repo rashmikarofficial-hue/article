@@ -1,0 +1,317 @@
+/* ============================================================
+   ARTICLE BY THARU — ARTICLE DATA
+   ============================================================
+   This file is the entire content database for the publication.
+   Every article shown on the homepage, category pages, search
+   results and related-article lists is pulled from this array.
+
+   HOW TO ADD A NEW ARTICLE
+   -------------------------------------------------------------
+   1. Copy one of the objects below (start from the opening `{`
+      to the closing `},`).
+   2. Paste it right under the comment that says
+      "// ADD NEW ARTICLE HERE".
+   3. Give it a unique "id" (just use the next number in line).
+   4. Fill in the fields — title, category, excerpt, image, etc.
+   5. Save the file and refresh index.html. That's it — the new
+      article will automatically appear on the homepage, the
+      "Latest Stories" grid, its category page and search.
+
+   HOW TO CHANGE AN IMAGE
+   -------------------------------------------------------------
+   Replace the "image" URL with any image link (Unsplash, your
+   own hosting, or a local file such as "images/my-photo.jpg").
+   Recommended size: at least 1600px wide, landscape orientation.
+
+   Field reference:
+   - id        : unique number, never reuse an old one
+   - title     : the headline
+   - category  : must match one of the categories in script.js
+   - excerpt   : one or two sentences shown on cards
+   - image     : hero/cover image URL
+   - author    : writer's display name
+   - date      : "YYYY-MM-DD" format (used for sorting + display)
+   - readTime  : e.g. "6 min read"
+   - tags      : array of lowercase keywords, used by search
+   - featured  : true = eligible to appear in the Featured Story
+                 slot (the newest featured:true article wins)
+   - trending  : true = eligible for the "Trending Now" list
+   - content   : the full body of the article, written in simple
+                 HTML — see the existing articles for the exact
+                 tags supported (h2, h3, p, blockquote, ul, ol,
+                 img, .pull-quote, .highlight, code)
+   ============================================================ */
+
+const articles = [
+  {
+    id: 1,
+    title: "The Future Is Already Here",
+    category: "Technology",
+    excerpt: "The changes we keep waiting for have quietly already happened — we just haven't noticed the ordinary ways they arrived.",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80",
+    author: "Tharu",
+    date: "2026-09-03",
+    readTime: "6 min read",
+    tags: ["technology", "future", "innovation", "everyday life"],
+    featured: true,
+    trending: true,
+    content: `
+      <p>We keep asking when the future will arrive, as if it were a train running late. But the future doesn't arrive all at once with a fanfare — it slips in through the side door, disguised as something unremarkable. The phone in your pocket predicts your route home before you ask. Your doctor reviews a scan that a model has already quietly flagged. None of this feels like science fiction, because it was never designed to.</p>
+
+      <h2>The quiet architecture of change</h2>
+      <p>Most of the technology reshaping daily life doesn't announce itself. It shows up as a slightly faster checkout, a slightly smarter recommendation, a form that fills itself in. Each change is small enough to shrug off, which is exactly why the sum of them catches us off guard.</p>
+
+      <blockquote class="pull-quote">"The future doesn't knock. It just rearranges the furniture while you're not looking."</blockquote>
+
+      <p>Consider how differently we now expect information to behave. A generation ago, finding an answer meant a trip to a library or a wait for tomorrow's paper. Today the expectation is instant, personalized, and increasingly anticipatory — the answer arrives before the question is fully formed.</p>
+
+      <h3>Three shifts already underway</h3>
+      <ul>
+        <li><span class="highlight">Ambient computing</span> — technology that fades into the background of a room instead of demanding a screen.</li>
+        <li><span class="highlight">Predictive assistance</span> — tools that act on your behalf rather than simply answering when asked.</li>
+        <li><span class="highlight">Distributed intelligence</span> — processing that happens on your device, not in a distant data center, protecting privacy while staying fast.</li>
+      </ul>
+
+      <p>None of these shifts required a dramatic unveiling. They arrived through firmware updates and small redesigns, one patch at a time, until the old way of doing things quietly became the exception rather than the rule.</p>
+
+      <h2>What comes next isn't a leap — it's a habit</h2>
+      <p>If there's a lesson in how the future has actually shown up so far, it's this: it rarely looks like the future while it's happening. It looks like a minor convenience you stop noticing within a week. The next decade will likely follow the same pattern — not a single dramatic turning point, but thousands of small ones, each easy to miss, all adding up to a world that would astonish someone standing here just ten years ago.</p>
+    `
+  },
+  {
+    id: 2,
+    title: "How AI Is Changing the Way We Think",
+    category: "AI",
+    excerpt: "It isn't just automating tasks — it's quietly reshaping how we form ideas, make decisions and trust our own judgment.",
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1600&q=80",
+    author: "Tharu",
+    date: "2026-09-01",
+    readTime: "7 min read",
+    tags: ["ai", "artificial intelligence", "thinking", "psychology"],
+    featured: false,
+    trending: true,
+    content: `
+      <p>Every major tool humans have built has changed not just what we can do, but how we think — writing reshaped memory, the printing press reshaped authority, the internet reshaped attention. Artificial intelligence is doing something similarly deep, and it's happening fast enough that we haven't fully reckoned with it yet.</p>
+
+      <h2>From answers to conversations</h2>
+      <p>We used to think of information retrieval as a one-way street: you asked, a system answered, and the exchange ended. Increasingly, that exchange has become a back-and-forth — a kind of thinking-out-loud with a responsive partner. This changes the shape of how ideas form. Instead of arriving at a conclusion alone and presenting it, more people now arrive at conclusions through dialogue.</p>
+
+      <blockquote class="pull-quote">"We are not just outsourcing tasks to machines. We are outsourcing parts of the thinking process itself."</blockquote>
+
+      <h3>The upside: faster iteration</h3>
+      <p>Ideas that once took days to test against criticism can now be stress-tested in minutes. A rough argument can be refined, challenged and rebuilt in a single sitting. For anyone who thinks by writing, this is a genuine gift — friction has dropped, and with it, some of the fear of the blank page.</p>
+
+      <h3>The risk: borrowed conviction</h3>
+      <p>The danger sits on the other side of the same coin. When a system can always produce a plausible-sounding answer, it becomes easy to mistake fluency for correctness, and convenience for understanding. The habit worth protecting is the pause — the moment where you ask not just "what's the answer" but "why is this the answer, and would I have arrived here myself?"</p>
+
+      <ol>
+        <li>Use AI to widen the range of ideas you consider, not to shrink it to one.</li>
+        <li>Keep a habit of asking a tool to argue against its own answer.</li>
+        <li>Notice when you're accepting a conclusion because it's fast, rather than because it's right.</li>
+      </ol>
+
+      <h2>Thinking with a partner, not a replacement</h2>
+      <p>The most interesting version of this future isn't one where machines think for us — it's one where the back-and-forth sharpens our own thinking. That requires treating these tools as a sparring partner rather than an oracle. The people who benefit most won't be the ones who ask the most questions, but the ones who keep questioning the answers.</p>
+    `
+  },
+  {
+    id: 3,
+    title: "The New Luxury Is Simplicity",
+    category: "Lifestyle",
+    excerpt: "In a world saturated with more, the rarest and most desirable thing has quietly become less.",
+    image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1600&q=80",
+    author: "Tharu",
+    date: "2026-08-28",
+    readTime: "5 min read",
+    tags: ["lifestyle", "simplicity", "luxury", "minimalism"],
+    featured: false,
+    trending: false,
+    content: `
+      <p>For most of the last century, luxury meant abundance — more space, more fabric, more staff, more stuff. That equation is quietly breaking down. Today, the truly rare commodity isn't more of anything. It's less: less noise, less clutter, less demand on your attention.</p>
+
+      <h2>Scarcity has changed shape</h2>
+      <p>When everything is available instantly, availability stops being impressive. What becomes impressive instead is restraint — the discipline to own fewer things, chosen more carefully, used for longer. A single, well-made object that lasts a decade now signals more status than a drawer full of disposable ones.</p>
+
+      <blockquote class="pull-quote">"Simplicity used to be what you settled for. Now it's what you have to earn."</blockquote>
+
+      <h3>What this looks like in practice</h3>
+      <ul>
+        <li>A wardrobe of a few excellent pieces instead of a closet of adequate ones.</li>
+        <li>A calendar with visible white space instead of back-to-back commitments.</li>
+        <li>A home designed around what's used daily, not what might be needed someday.</li>
+      </ul>
+
+      <p>None of this is about deprivation. It's about redirecting effort toward fewer, better decisions — the opposite of austerity, which is really just abundance without any curation at all.</p>
+
+      <h2>Why this shift is lasting</h2>
+      <p>Attention has become the scarcest resource most people have, and simplicity is, at its core, a way of protecting it. As long as that scarcity holds, the appeal of a quieter, more deliberate life is unlikely to fade — it will simply keep finding new forms to express itself in.</p>
+    `
+  },
+  {
+    id: 4,
+    title: "Inside the Cities of Tomorrow",
+    category: "Future",
+    excerpt: "The next generation of cities won't be defined by taller buildings, but by how invisibly they run.",
+    image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1600&q=80",
+    author: "Tharu",
+    date: "2026-08-24",
+    readTime: "8 min read",
+    tags: ["future", "cities", "urban design", "technology"],
+    featured: false,
+    trending: true,
+    content: `
+      <p>Picture a city that adjusts its own traffic lights before congestion forms, that reroutes power before a heatwave strains the grid, that notices a water leak from a change in pressure long before anyone reports it. This isn't a concept sketch — versions of it are already running quietly beneath streets in cities around the world.</p>
+
+      <h2>Infrastructure that responds instead of waits</h2>
+      <p>Cities have historically been built and then patched — reactive by design. The emerging model flips that relationship. Sensors, shared data and predictive planning let a city anticipate strain instead of absorbing it after the fact. The result isn't more visible technology; if anything, it's less. The best-run systems tend to disappear into the background entirely.</p>
+
+      <blockquote class="pull-quote">"A great city of the future won't look futuristic. It will just work."</blockquote>
+
+      <h3>Three quiet shifts already visible</h3>
+      <ul>
+        <li><span class="highlight">Adaptive transit</span> — routes and schedules that flex with real demand rather than a fixed timetable.</li>
+        <li><span class="highlight">Distributed energy</span> — neighborhoods that generate and share power locally instead of depending on one central grid.</li>
+        <li><span class="highlight">Walkable density</span> — a return to compact, mixed-use neighborhoods designed around people rather than cars.</li>
+      </ul>
+
+      <h2>The human question underneath the systems</h2>
+      <p>None of this technology means much if it isn't matched by a city that remains livable at street level — shaded sidewalks, public space, neighbors who know each other. The cities that get this right won't be the ones with the most sensors. They'll be the ones that use invisible intelligence in service of a very visible, very old goal: making daily life easier for the people who actually live there.</p>
+    `
+  },
+  {
+    id: 5,
+    title: "Why Curiosity Is Becoming a Superpower",
+    category: "Inspiration",
+    excerpt: "In a world where answers are cheap and instant, the ability to ask a good question is becoming the rarer skill.",
+    image: "https://images.unsplash.com/photo-1447069387593-a5de0862481e?auto=format&fit=crop&w=1600&q=80",
+    author: "Tharu",
+    date: "2026-08-20",
+    readTime: "5 min read",
+    tags: ["inspiration", "curiosity", "learning", "growth"],
+    featured: false,
+    trending: false,
+    content: `
+      <p>Knowledge used to be the scarce resource. You could build a whole career on simply knowing something others didn't. That scarcity has largely disappeared — nearly any fact is one search away. What hasn't become cheap is the instinct to keep asking why, to notice the question nobody else thought to raise.</p>
+
+      <h2>The shift from knowing to wondering</h2>
+      <p>When information was hard to get, the valuable skill was memory and access. Now that information is abundant, the valuable skill is discernment — knowing which question actually matters, and having the patience to sit with it before reaching for an answer.</p>
+
+      <blockquote class="pull-quote">"The smartest person in the room is often just the one still asking questions."</blockquote>
+
+      <h3>How to practice curiosity on purpose</h3>
+      <ol>
+        <li>Follow a genuine question for twenty minutes longer than feels efficient.</li>
+        <li>Ask "what would change my mind about this?" before settling on an opinion.</li>
+        <li>Read one thing a week that has nothing to do with your field.</li>
+      </ol>
+
+      <p>None of this requires talent so much as tolerance — a willingness to stay in the uncomfortable space of not-yet-knowing a little longer than most people are willing to.</p>
+
+      <h2>Curiosity compounds</h2>
+      <p>Like most durable advantages, curiosity rewards consistency far more than intensity. A small, steady habit of asking better questions, sustained over years, tends to outperform any single burst of intellectual effort. It's less a superpower in the dramatic sense, and more a quiet compounding one — which may be exactly why it's so easy to underestimate.</p>
+    `
+  },
+  {
+    id: 6,
+    title: "The Digital World After 2030",
+    category: "Technology",
+    excerpt: "As today's infrastructure ages out, the internet's next decade will be defined less by new apps and more by new foundations.",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80",
+    author: "Tharu",
+    date: "2026-08-15",
+    readTime: "7 min read",
+    tags: ["technology", "internet", "future", "digital"],
+    featured: false,
+    trending: false,
+    content: `
+      <p>Most conversations about the future of the internet focus on what we'll be able to do with it. Fewer focus on what it will be built out of. But the coming decade looks less like a new app store and more like a quiet rebuild of the pipes underneath everything we already use.</p>
+
+      <h2>Foundations, not features</h2>
+      <p>Identity verification, data ownership, and energy-efficient computing are unglamorous problems compared to the latest app, but they're the ones that will shape what's actually possible after 2030. A faster chip matters less than who controls the data running through it.</p>
+
+      <blockquote class="pull-quote">"The most important technology of the next decade might be the parts nobody sees."</blockquote>
+
+      <h3>Three foundational shifts to watch</h3>
+      <ul>
+        <li><span class="highlight">Personal data ownership</span> — a move toward individuals controlling and even monetizing their own information.</li>
+        <li><span class="highlight">Edge-first computing</span> — processing power spreading out to devices instead of concentrating in remote data centers.</li>
+        <li><span class="highlight">Verifiable identity</span> — systems that let you prove who you are online without handing over everything about yourself to do it.</li>
+      </ul>
+
+      <h2>A quieter kind of progress</h2>
+      <p>None of these shifts will generate the same headlines as a flashy new device. But they will decide who benefits from the next wave of digital life, and on what terms. The internet after 2030 may not look radically different on the surface — the real change will be underneath, in who holds the keys.</p>
+    `
+  },
+  {
+    id: 7,
+    title: "Travel Is Changing Forever",
+    category: "Travel",
+    excerpt: "The point of travel is shifting from ticking off destinations to actually slowing down once you arrive.",
+    image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1600&q=80",
+    author: "Tharu",
+    date: "2026-08-10",
+    readTime: "6 min read",
+    tags: ["travel", "culture", "lifestyle"],
+    featured: false,
+    trending: false,
+    content: `
+      <p>For years, travel was measured in stamps — how many countries, how many cities, how many photos taken in front of how many landmarks. That measurement is losing its grip. A quieter, slower kind of travel is taking its place, one measured less in distance and more in depth.</p>
+
+      <h2>From checklist to immersion</h2>
+      <p>Instead of packing a dozen cities into a week, more travelers are choosing to stay in one place long enough to actually understand it — learning a few words of the language, returning to the same café, letting a neighborhood become familiar rather than photographed.</p>
+
+      <blockquote class="pull-quote">"The best trip is often the one where you did less, not more."</blockquote>
+
+      <h3>What's driving the shift</h3>
+      <ul>
+        <li>Remote work making longer stays possible without using up vacation days.</li>
+        <li>A growing fatigue with overcrowded, over-photographed destinations.</li>
+        <li>A desire for genuine connection over curated highlight reels.</li>
+      </ul>
+
+      <h2>Slower doesn't mean smaller</h2>
+      <p>Slowing down doesn't shrink the experience — if anything, it deepens it. A week spent getting to know one neighborhood can leave a more lasting impression than a whirlwind tour of ten cities. As this mindset spreads, the destinations that thrive may not be the ones with the most landmarks, but the ones that reward the traveler willing to stay a while.</p>
+    `
+  },
+  {
+    id: 8,
+    title: "The Culture of a Connected Generation",
+    category: "Culture",
+    excerpt: "Growing up permanently online hasn't erased identity — it's just changed the material it's built from.",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80",
+    author: "Tharu",
+    date: "2026-08-05",
+    readTime: "6 min read",
+    tags: ["culture", "generation", "internet", "identity"],
+    featured: false,
+    trending: false,
+    content: `
+      <p>Every generation is shaped by the tools it grows up with. For the one coming of age now, that tool is a constant, ambient connection to everyone else — a state previous generations only experienced in short bursts, if at all. The culture that's emerging from this isn't better or worse than what came before it. It's simply built from different material.</p>
+
+      <h2>Identity as an ongoing draft</h2>
+      <p>Where identity once formed mostly in private and was revealed gradually, it now often develops in public, in small visible pieces, revised in real time. This can look like performance from the outside, but for many it functions more like a rough draft, refined through feedback rather than finished before it's shared.</p>
+
+      <blockquote class="pull-quote">"This generation isn't performing an identity. It's drafting one, in public, one post at a time."</blockquote>
+
+      <h3>What's genuinely new</h3>
+      <ul>
+        <li>Communities formed around interest rather than geography, often more tightly knit than physical neighborhoods.</li>
+        <li>A comfort with vulnerability shared publicly that earlier generations reserved for close friends.</li>
+        <li>A fluency in irony and self-awareness as a way of managing constant visibility.</li>
+      </ul>
+
+      <h2>Continuity underneath the change</h2>
+      <p>Strip away the platforms and the pace, and the underlying needs look familiar — belonging, recognition, a way to make sense of the world. The connected generation isn't inventing new needs. It's meeting old ones with new tools, and building a culture that reflects both.</p>
+    `
+  }
+
+  // ADD NEW ARTICLE HERE
+  // Copy an object above this line, give it a new unique id,
+  // and fill in your own title, category, excerpt, image and
+  // content. It will appear across the site automatically.
+];
+
+/* Make articles available to other scripts (script.js, article.html) */
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = articles;
+}
